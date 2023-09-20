@@ -1,0 +1,258 @@
+<Script>katjee:Samina powerchop tree woodcutting:1
+<Description>Drop all items!,Woodcutting fast with stamina pots,Only normal axe up to dragon,Have stamina pots in your inventory to use them! No banking!
+<Record Starting Area>17
+<Boolean>EditStrings:true
+<Area>myPlayer Starting Area:3132,3256,3162,3226,0
+<Timer>rndtimr:600,true,10000,false
+<Random Number>randomSleep:1:100
+<Random Number>randomMousensleep:1:300
+
+[0, Timers, isRunning, {false}, 1:rndtimr]
+[0, Camera, moveYaw, 2:10, 2:50]
+[0, Timers, start, 1:rndtimr]
+
+[1, Camera, getPitch, 1:<=, 2:67]
+[1, Camera, movePitch, 2:67, 2:100]
+
+[2, Camera, getZoom, {false}, 2:1]
+[2, Camera, zoomCamera, 2:1]
+
+[3, Inventory, deselect]
+
+[3, Variables, getRandomNumber, 1:randomSleep, 1:==, 2:13]
+[3, Sleeping, sleepRandom, 2:100, 2:6500]
+
+[4, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:13]
+[4, Mouse, moveOutsideScreen]
+[4, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[5, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:24]
+[5, Mouse, moveOutsideScreen]
+[5, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[6, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:35]
+[6, Mouse, moveOutsideScreen]
+[6, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[7, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:46]
+[7, Mouse, moveOutsideScreen]
+[7, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[9, Settings, getRunEnergy, 1:<=, 2:1]
+[9, Inventory, inventoryContainsPartialName, {true}, 1:Stamina potion, 3:false, 3:true]
+[9, Inventory, interactWithItemWithPartialName, 1:Stamina potion, 3:true, 3:true, 1:Drink]
+
+[11, Settings, getRunEnergy, 1:>=, 2:10]
+[11, Settings, enableRunning]
+
+
+
+
+
+[13, MyPlayer, areaContainsPlayer, {false}, 1:[myPlayer Starting Area]]
+[13, Variables, goTo, 2:1000]
+[14, Inventory, isFull, {true}]
+[14, Variables, goTo, 2:1000]
+[15, MyPlayer, isAnimating, {true}]
+[15, Variables, goTo, 2:1000]
+
+
+
+
+
+[20, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:1, 1:Distance, 3:false, 3:false]
+[20, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[20, Variables, goTo, 2:1000]
+
+[21, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:1, 1:Distance, 3:false, 3:false]
+[21, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[21, Variables, goTo, 2:1000]
+
+[22, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:1, 1:Distance, 3:false, 3:false]
+[22, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[22, Variables, goTo, 2:1000]
+
+
+
+
+[23, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:2, 1:Distance, 3:false, 3:false]
+[23, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[23, Variables, goTo, 2:1000]
+
+[24, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:2, 1:Distance, 3:false, 3:false]
+[24, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[24, Variables, goTo, 2:1000]
+
+[25, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:2, 1:Distance, 3:false, 3:false]
+[25, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[25, Variables, goTo, 2:1000]
+
+
+
+
+[26, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:3, 1:Distance, 3:false, 3:false]
+[26, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[26, Variables, goTo, 2:1000]
+
+[27, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:3, 1:Distance, 3:false, 3:false]
+[27, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[27, Variables, goTo, 2:1000]
+
+[28, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:3, 1:Distance, 3:false, 3:false]
+[28, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[28, Variables, goTo, 2:1000]
+
+
+
+
+[29, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:4, 1:Distance, 3:false, 3:false]
+[29, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[29, Variables, goTo, 2:1000]
+
+[30, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:4, 1:Distance, 3:false, 3:false]
+[30, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[30, Variables, goTo, 2:1000]
+
+[31, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:4, 1:Distance, 3:false, 3:false]
+[31, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[31, Variables, goTo, 2:1000]
+
+
+
+[32, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:5, 1:Distance, 3:false, 3:false]
+[32, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[32, Variables, goTo, 2:1000]
+
+[33, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:5, 1:Distance, 3:false, 3:false]
+[33, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[33, Variables, goTo, 2:1000]
+
+[34, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:5, 1:Distance, 3:false, 3:false]
+[34, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[34, Variables, goTo, 2:1000]
+
+
+
+
+[35, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:6, 1:Distance, 3:false, 3:false]
+[35, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[35, Variables, goTo, 2:1000]
+
+[36, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:6, 1:Distance, 3:false, 3:false]
+[36, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[36, Variables, goTo, 2:1000]
+
+[37, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:6, 1:Distance, 3:false, 3:false]
+[37, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[37, Variables, goTo, 2:1000]
+
+
+
+
+
+[38, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:7, 1:Distance, 3:false, 3:false]
+[38, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[38, Variables, goTo, 2:1000]
+
+[39, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:7, 1:Distance, 3:false, 3:false]
+[39, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[39, Variables, goTo, 2:1000]
+
+[40, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:7, 1:Distance, 3:false, 3:false]
+[40, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[40, Variables, goTo, 2:1000]
+
+
+
+
+[41, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:8, 1:Distance, 3:false, 3:false]
+[41, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[41, Variables, goTo, 2:1000]
+
+[42, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:8, 1:Distance, 3:false, 3:false]
+[42, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[42, Variables, goTo, 2:1000]
+
+[43, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:8, 1:Distance, 3:false, 3:false]
+[43, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[43, Variables, goTo, 2:1000]
+
+
+
+[44, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:9, 1:Distance, 3:false, 3:false]
+[44, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[44, Variables, goTo, 2:1000]
+
+[45, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:9, 1:Distance, 3:false, 3:false]
+[45, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[45, Variables, goTo, 2:1000]
+
+[46, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:9, 1:Distance, 3:false, 3:false]
+[46, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[46, Variables, goTo, 2:1000]
+
+
+
+[47, Map, getDistance, 1:Tree, 1:RS2Object, 1:==, 2:10, 1:Distance, 3:false, 3:false]
+[47, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[47, Variables, goTo, 2:1000]
+
+[48, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:==, 2:10, 1:Distance, 3:false, 3:false]
+[48, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[48, Variables, goTo, 2:1000]
+
+[49, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:==, 2:10, 1:Distance, 3:false, 3:false]
+[49, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[49, Variables, goTo, 2:1000]
+
+
+
+
+
+
+
+
+
+
+[50, Map, getDistance, 1:Tree, 1:RS2Object, 1:>=, 2:11, 1:Distance, 3:false, 3:false]
+[50, RS2Object, interactWithRS2ObjectWithinArea, 1:Tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[50, Variables, goTo, 2:1000]
+
+[51, Map, getDistance, 1:Evergreen tree, 1:RS2Object, 1:>=, 2:11, 1:Distance, 3:false, 3:false]
+[51, RS2Object, interactWithRS2ObjectWithinArea, 1:Evergreen tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[51, Variables, goTo, 2:1000]
+
+[52, Map, getDistance, 1:Dead tree, 1:RS2Object, 1:>=, 2:11, 1:Distance, 3:false, 3:false]
+[52, RS2Object, interactWithRS2ObjectWithinArea, 1:Dead tree, 1:Chop down, 1:myPlayer Starting Area, 3:true, 3:false, 3:true, 3:false]
+[52, Variables, goTo, 2:1000]
+
+
+
+
+
+
+
+
+[1000, Sleeping, sleepAnimating, 2:450, 2:150]
+[1000, Variables, goTo, 2:1030]
+[1000, Sleeping, sleepRandom, 2:830, 2:870]
+[1000, Variables, goTo, 2:1030]
+
+
+[1030, Inventory, isFull, {true}]
+[1030, Inventory, dropAllExcept, 1:Knife, 1:Bronze axe, 1:Iron axe, 1:Steel axe, 1:Black axe, 1:Mithril axe, 1:Adamant axe, 1:Rune axe, 1:Dragon axe, 1:Stamina potion, 1:Stamina potion(4), 1:Stamina potion(3), 1:Stamina potion(2), 1:Stamina potion(1)]
+[1030, Variables, goTo, 2:1031]
+
+[1031, Settings, getRunEnergy, 1:<=, 2:1]
+[1031, Inventory, inventoryContainsPartialName, {true}, 1:Stamina potion, 3:false, 3:true]
+[1031, Inventory, interactWithItemWithPartialName, 1:Stamina potion, 3:true, 3:true, 1:Drink]
+[1031, Variables, goTo, 2:1032]
+
+[1032, Settings, getRunEnergy, 1:>=, 2:10]
+[1032, Settings, enableRunning]
+[1032, Variables, goTo, 2:1033]
+
+[1033, MyPlayer, areaContainsPlayer, {false}, 1:[myPlayer Starting Area]]
+[1033, WalkTo, walkToStartingArea, 3:false, 3:false, 3:false]
+
+

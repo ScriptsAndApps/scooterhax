@@ -1,0 +1,71 @@
+<Script>katjee:Samina powerchop tree woodcutting:1
+<Description>Drop all items!,Woodcutting fast with stamina pots,Only normal axe up to dragon,Have stamina pots in your inventory to use them! No banking!
+<Record Starting Area>15
+<Boolean>EditStrings:true
+<Area>myPlayer Starting Area:3132,3256,3162,3226,0
+<Timer>rndtimr:600,true,10000,false
+<Random Number>randomSleep:1:100
+<Random Number>randomMousensleep:1:300
+<User Input>Area Radius:15
+
+[0, Variables, getBoolean, 1:EditStrings, 3:true]
+[0, Variables, editBoolean, 1:EditStrings, 3:false]
+
+[0, Timers, isRunning, {false}, 1:rndtimr]
+[0, Camera, moveYaw, 2:10, 2:50]
+[0, Timers, start, 1:rndtimr]
+
+[1, Camera, getPitch, 1:<=, 2:67]
+[1, Camera, movePitch, 2:67, 2:100]
+
+[2, Camera, getZoom, {false}, 2:1]
+[2, Camera, zoomCamera, 2:1]
+
+[3, Inventory, deselect]
+
+[3, Variables, getRandomNumber, 1:randomSleep, 1:==, 2:13]
+[3, Sleeping, sleepRandom, 2:100, 2:6500]
+
+[4, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:13]
+[4, Mouse, moveOutsideScreen]
+[4, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[5, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:24]
+[5, Mouse, moveOutsideScreen]
+[5, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[6, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:35]
+[6, Mouse, moveOutsideScreen]
+[6, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[7, Variables, getRandomNumber, 1:randomMousensleep, 1:==, 2:46]
+[7, Mouse, moveOutsideScreen]
+[7, Sleeping, sleepRandom, 2:1000, 2:3500]
+
+[9, Settings, getRunEnergy, 1:<=, 2:1]
+[9, Inventory, inventoryContainsPartialName, {true}, 1:Stamina potion, 3:false, 3:true]
+[9, Inventory, interactWithItemWithPartialName, 1:Stamina potion, 3:true, 3:true, 1:Drink]
+
+[11, Settings, getRunEnergy, 1:>=, 2:10]
+[11, Settings, enableRunning]
+
+[22, MyPlayer, areaContainsPlayer, {true}, 1:[myPlayer Starting Area]]
+[22, Inventory, isFull, {false}]
+[22, MyPlayer, isAnimating, {false}]
+[22, MyPlayer, areaContainsPlayer, {true}, 1:[myPlayer Starting Area]]
+[22, RS2Object, interactWithContainingAction, 1:Tree, 1:Chop down, 3:true, 3:false, 3:true, 3:false, 3:false]
+
+[30, Inventory, isFull, {true}]
+[30, Inventory, dropAllExcept, 1:Knife, 1:Bronze axe, 1:Iron axe, 1:Steel axe, 1:Black axe, 1:Mithril axe, 1:Adamant axe, 1:Rune axe, 1:Dragon axe, 1:Stamina potion, 1:Stamina potion(4), 1:Stamina potion(3), 1:Stamina potion(2), 1:Stamina potion(1)]
+
+[31, Settings, getRunEnergy, 1:<=, 2:1]
+[31, Inventory, inventoryContainsPartialName, {true}, 1:Stamina potion, 3:false, 3:true]
+[31, Inventory, interactWithItemWithPartialName, 1:Stamina potion, 3:true, 3:true, 1:Drink]
+
+[32, Settings, getRunEnergy, 1:>=, 2:10]
+[32, Settings, enableRunning]
+
+[33, MyPlayer, areaContainsPlayer, {false}, 1:[myPlayer Starting Area]]
+[33, WalkTo, walkToStartingArea, 3:false, 3:false, 3:false]
+
+

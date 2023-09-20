@@ -1,0 +1,108 @@
+<Script>katjee:SpammClickDraynorAgility:1
+<Description>Walks to Draynor, Collects marks, Enables run!
+<Area>wallUpArea:3102,3280,3104,3278,0
+<Area>nearuparea:3099,3284,3109,3274,0
+<Random Number>randomSleep:1:10
+<Timer>rndtimr:8000,true,60000,false
+
+[0, Settings, enableRunning]
+[0, Timers, isRunning, {false}, 1:rndtimr]
+[0, Camera, moveYaw, 2:10, 2:50]
+[0, Timers, start, 1:rndtimr]
+
+[1, Camera, getZoom, {false}, 2:1]
+[1, Camera, zoomCamera, 2:1]
+[1, Camera, getPitch, 1:<=, 2:67]
+[1, Camera, movePitch, 2:67, 2:100]
+
+
+[2, Settings, getRunEnergy, 1:>=, 2:10]
+[2, Settings, enableRunning]
+
+[3, Map, canReachEntity, {true}, 1:11849, 1:GroundItem]
+[3, GroundItem, isExists, {true}, 2:11849]
+[3, GroundItem, interactWith, 2:11849, 1:Take, 3:true, 3:false, 3:true, 3:false]
+
+
+[4, MyPlayer, areaContainsPlayer, {true}, 1:[nearuparea]]
+[4, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[4, Map, canReachEntity, {true}, 2:11404, 1:RS2Object]
+[4, Settings, enableRunning]
+[4, RS2Object, interactWith, 2:11404, 1:Climb, 3:false]
+
+
+[5, Map, canReachEntity, {false}, 2:11405, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11406, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11430, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11630, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11631, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11632, 1:RS2Object]
+[5, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[5, MyPlayer, areaContainsPlayer, {false}, 1:[wallUpArea]]
+[5, Settings, enableRunning]
+[5, MyPlayer, myPlayerCoords, 1:Z, 1:==, 2:0]
+[5, WalkTo, walkToArea, 1:wallUpArea, 3:true, 3:false, 3:true, 3:false, 3:false, 3:false, 3:false, 3:false]
+
+[9, MyPlayer, areaContainsPlayer, {true}, 1:[nearuparea]]
+[9, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[9, Map, canReachEntity, {true}, 2:11404, 1:RS2Object]
+[9, Settings, enableRunning]
+[9, RS2Object, interactWith, 2:11404, 1:Climb, 3:false]
+[9, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[13, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[13, MyPlayer, areaContainsPlayer, {false}, 1:[wallUpArea]]
+[13, Map, canReachEntity, {true}, 2:11405, 1:RS2Object]
+[13, Settings, enableRunning]
+[13, RS2Object, interactWith, 2:11405, 1:Cross, 3:false]
+[13, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+
+[14, Map, canReachEntity, {false}, 2:11405, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11406, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11430, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11630, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11631, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11632, 1:RS2Object]
+[14, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[14, MyPlayer, areaContainsPlayer, {false}, 1:[wallUpArea]]
+[14, Settings, enableRunning]
+[14, WalkTo, walkToArea, 1:wallUpArea, 3:true, 3:false, 3:true, 3:false, 3:false, 3:false, 3:false, 3:false]
+
+
+[15, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[15, Map, canReachEntity, {false}, 2:11405, 1:RS2Object]
+[15, Map, canReachEntity, {true}, 2:11406, 1:RS2Object]
+[15, Settings, enableRunning]
+[15, RS2Object, interactWith, 2:11406, 1:Cross, 3:false]
+[15, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[17, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[17, Map, canReachEntity, {false}, 2:11406, 1:RS2Object]
+[17, Map, canReachEntity, {true}, 2:11430, 1:RS2Object]
+[17, Settings, enableRunning]
+[17, RS2Object, interactWith, 2:11430, 1:Balance, 3:false]
+[17, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[19, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[19, Map, canReachEntity, {false}, 2:11631, 1:RS2Object]
+[19, Map, canReachEntity, {true}, 2:11630, 1:RS2Object]
+[19, Settings, enableRunning]
+[19, RS2Object, interactWith, 2:11630, 1:Jump-up, 3:false]
+[19, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[25, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[25, Map, canReachEntity, {true}, 2:11631, 1:RS2Object]
+[25, Settings, enableRunning]
+[25, RS2Object, interactWith, 2:11631, 1:Jump, 3:false]
+[25, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[28, Map, canReachEntity, {false}, 2:11849, 1:GroundItem]
+[28, Map, canReachEntity, {false}, 2:11631, 1:RS2Object]
+[28, Map, canReachEntity, {true}, 2:11632, 1:RS2Object]
+[28, Settings, enableRunning]
+[28, RS2Object, interactWith, 2:11632, 1:Climb-down, 3:false]
+[28, MyPlayer, isMoving, {true}, SLEEP_UNTIL:300]
+
+[30, Variables, getRandomNumber, 1:randomSleep, 1:==, 2:3]
+[30, Sleeping, sleepRandom, 2:100, 2:6500]
